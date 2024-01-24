@@ -1,0 +1,92 @@
+SQL Pyspark functions 
+
+# Mathematical Functions
+col("columnName")        # Returns a Column based on the given column name
+lit("value")             # Creates a new column with a constant literal value
+expr("expression")        # Parses a SQL expression and returns the result as a Column
+abs(col)                 # Absolute value
+sqrt(col)                # Square root
+exp(col)                 # Exponential
+log(col)                 # Natural logarithm
+log10(col)               # Base-10 logarithm
+pow(col, exponent)       # Raises a column to the specified power
+round(col, scale)        # Rounds a column to the specified number of decimal places
+rand()                   # Generates a random column with values in [0, 1)
+randn()                  # Generates a random column with standard normal distribution
+
+# Aggregate Functions
+count(col)               # Counts the number of rows in a DataFrame
+sum(col)                 # Sum of values in a column
+avg(col)                 # Average of values in a column
+min(col)                 # Minimum value in a column
+max(col)                 # Maximum value in a column
+mean(col)                # Mean (average) of values in a column
+first(col)               # First value in a column
+last(col)                # Last value in a column
+stddev(col)              # Standard deviation of values in a column
+stddev_pop(col)          # Population standard deviation of values in a column
+stddev_samp(col)         # Sample standard deviation of values in a column
+variance(col)            # Variance of values in a column
+var_pop(col)             # Population variance of values in a column
+var_samp(col)            # Sample variance of values in a column
+
+# String Functions
+concat(col1, col2, ...)  # Concatenates multiple columns into a single column
+substring(col, pos, len)  # Extracts a substring from a column
+trim(col)                # Removes leading and trailing whitespaces from a column
+lower(col)               # Converts a column to lowercase
+upper(col)               # Converts a column to uppercase
+initcap(col)             # Converts the first letter of each word to uppercase
+length(col)              # Returns the length of a string column
+locate(substr, col)      # Returns the position of the first occurrence of a substring in a column
+instr(col, substr)        # Returns the position of the first occurrence of a substring in a column
+lpad(col, len, pad)       # Left-pads a string column to a specified length with a specified padding
+rpad(col, len, pad)       # Right-pads a string column to a specified length with a specified padding
+regexp_replace(col, pattern, replacement)  # Replaces all substrings in a column that match the specified pattern
+regexp_extract(col, pattern, groupIdx)     # Extracts substrings from a column that match the specified pattern and group index
+translate(col, matching, replace)         # Translates characters in a column based on a mapping
+
+# Date and Time Functions
+current_date()           # Returns the current date
+current_timestamp()      # Returns the current timestamp
+date_add(col, days)       # Adds a specified number of days to a date column
+date_sub(col, days)       # Subtracts a specified number of days from a date column
+datediff(end, start)      # Computes the difference in days between two date columns
+months_between(end, start)  # Computes the difference in months between two date columns
+trunc(col, format)        # Truncates a date or timestamp column to the specified format
+year(col)                # Extracts the year from a date or timestamp column
+quarter(col)             # Extracts the quarter from a date or timestamp column
+month(col)               # Extracts the month from a date or timestamp column
+dayofmonth(col)          # Extracts the day of the month from a date or timestamp column
+dayofyear(col)           # Extracts the day of the year from a date or timestamp column
+hour(col)                # Extracts the hour from a timestamp column
+minute(col)              # Extracts the minute from a timestamp column
+second(col)              # Extracts the second from a timestamp column
+
+# Conditional Functions
+when(condition, value)    # Adds a condition to a DataFrame and returns a Column based on the condition
+otherwise(value)          # Defines the value to be used when a condition in `when` is not satisfied
+coalesce(col1, col2, ...)  # Returns the first non-null value among the columns
+ifnull(col, value)        # Returns `value` if the column is null, otherwise returns the column
+isnan(col)               # Returns true if the column is NaN, false otherwise
+
+# Window Functions
+over(windowSpec)          # Defines a window specification for window functions
+
+# Other Functions
+isnan(col)               # Returns true if the column is NaN, false otherwise
+isnull(col)              # Returns true if the column is null, false otherwise
+isnan(col)               # Returns true if the column is NaN, false otherwise
+ifnull(col, value)        # Returns `value` if the column is null, otherwise returns the column
+desc(col)                # Returns a descending version of a column
+asc(col)                 # Returns an ascending version of a column
+isNotNull(col)           # Returns true if the column is not null, false otherwise
+isNan(col)               # Returns true if the column is NaN, false otherwise
+isNull(col)              # Returns true if the column is null, false otherwise
+bitwiseNOT(col)          # Bitwise NOT
+bitwiseAND(col1, col2)   # Bitwise AND
+bitwiseOR(col1, col2)    # Bitwise OR
+bitwiseXOR(col1, col2)   # Bitwise XOR
+shiftLeft(col, numBits)  # Left-shifts the bits of a column by a specified number of bits
+shiftRight(col, numBits) # Right-shifts the bits of a column by a specified number of bits
+shiftRightUnsigned(col, numBits)  # Unsigned right-shifts the bits of a column by a specified number of bits
